@@ -14,6 +14,30 @@
         }
     ],
     "configurations": [
+    {
+        "name": "PowerShell: Binary Module Interactive",
+        "type": "PowerShell",
+        "request": "launch",
+        "script": "Enter command to import your binary module, for example: \"Import-Module -Force /path/to/module.psd1|dll\"",
+        "createTemporaryIntegratedConsole": true,
+        "attachDotnetDebugger": true
+    },{
+        "name": "PowerShell: Binary Module Pester Tests",
+        "type": "PowerShell",
+        "request": "launch",
+        "script": "Invoke-Pester",
+        "createTemporaryIntegratedConsole": true,
+        "attachDotnetDebugger": true
+    }{
+        "name": "TR4200812${fileWorkspaceFolderBasename}",
+        "processId": "${command:PickProcess}",
+        "request": "attach",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "node"
+    },
+    ASPNETCORE_ENVIRONMENT
         {
             "name": "Back End",
             "type": "coreclr",
